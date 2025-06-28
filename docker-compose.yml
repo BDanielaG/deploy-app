@@ -1,6 +1,5 @@
 networks:
   jenkins-network:
-    # You can specify a driver if needed, but bridge is the default and usually sufficient
     driver: bridge
 
 services:
@@ -8,7 +7,7 @@ services:
     image: gitea/gitea:latest
     container_name: gitea
     ports:
-      - "3000:3000"   # HTTP
+      - "3000:3000" 
       - "222:22"
     environment:
       - USER_UID=1000
@@ -25,8 +24,8 @@ services:
     container_name: jenkins
     user: root
     ports:
-      - "8080:8080"   # Host port 8080 mapped to Jenkins port 8080
-      - "50000:50000" # For Jenkins agents
+      - "8080:8080"   
+      - "50000:50000" 
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
@@ -35,7 +34,7 @@ services:
     environment:
       - TZ=Europe/Bucharest
     networks: 
-      - jenkins-network # Add the jenkins service to the new network
+      - jenkins-network
     # depends_on:
     #   - gitlab
 
@@ -55,7 +54,7 @@ services:
       - jenkins-network
 
   nexus:
-    image: sonatype/nexus3:latest  # Poți specifica o versiune anume dacă dorești, ex: sonatype/nexus3:3.68.1
+    image: sonatype/nexus3:latest 
     container_name: nexus
     ports:
       - "8081:8081"
