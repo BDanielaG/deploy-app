@@ -2,16 +2,10 @@
 
 set -xe
 
-echo "-----------------------------------------------------"
 echo "--- Running Maven Package for PetClinic ---"
 echo "--- Building commit: ${GIT_COMMIT_HASH} ---"
-echo "-----------------------------------------------------"
 mvn spring-javaformat:apply
 mvn clean package -DskipTests
-
-echo "-----------------------------------------------------"
-echo "--- Maven package completed successfully. ---"
-echo "-----------------------------------------------------"
 
 echo "search for jar file"
 FOUND_JARS=$(find target -maxdepth 1 -name "*.jar" ! -name "*-sources.jar" ! -name "*-javadoc.jar" -print -quit)
