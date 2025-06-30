@@ -3,7 +3,6 @@
 
 set -xe 
 
-# Set global env
 TARGET_USER="daniela"
 TARGET_HOST="ip"
 TARGET_APP_DIR="/mnt/c/Users/Dani/Desktop/LICENTA/app"
