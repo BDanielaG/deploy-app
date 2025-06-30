@@ -5,7 +5,7 @@ set -xe  # Exit on error, show commands
 
 # Set global env
 TARGET_USER="daniela"
-TARGET_HOST="172.30.62.12"
+TARGET_HOST="ip"
 TARGET_APP_DIR="/mnt/c/Users/Dani/Desktop/LICENTA/app"
 JAR_FILE_NAME="petclinic-${GIT_COMMIT_HASH}.jar"
 
